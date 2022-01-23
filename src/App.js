@@ -12,11 +12,12 @@ function App() {
 	const [currentRole, setCurrentRole] = useState(null)
 	const [description, setDescription] = useState(null)
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		let path = window.location
 		let _pathName = path.pathname
+		let _qryParams = new URLSearchParams(document.location.search)
 		let _splitArr = _pathName.split('/')
-		let _userId = _splitArr[_splitArr.length - 1]
+		let _userId = _splitArr[_splitArr.length - 1] || _qryParams.get('id')
 		let result = Promise.resolve({
 			data: {
 				userData: [users[_userId]]
