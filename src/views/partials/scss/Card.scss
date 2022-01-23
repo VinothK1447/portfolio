@@ -1,0 +1,155 @@
+@import './../../../styles/base.scss';
+
+.card-container {
+	display: flex;
+	flex-flow: row wrap;
+	flex: 0;
+	justify-content: center;
+	height: 80%;
+	background-color: transparent;
+
+	.card {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		height: auto;
+		width: 100%;
+		border: 1px solid $gray-color;
+		box-shadow: 2px 2px 5px 5px $gray-color;
+		border-radius: 10px;
+		margin: 15px;
+
+		.section-block {
+			padding: 20px;
+			text-align: center;
+			&:not(:last-child) {
+				border-bottom: 2px dashed;
+			}
+
+			.bold-head {
+				font-weight: 700;
+				font-size: 1.5rem;
+				color: $green-color;
+			}
+
+			.sub-head {
+				font-weight: 600;
+				font-size: 1.25rem;
+			}
+
+			.sub-text {
+				font-weight: 500;
+				font-size: 0.875rem;
+			}
+		}
+
+		// Projects
+		.projects-ct {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-around;
+			padding: 20px 0;
+			width: 100%;
+
+			&-info {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 25%;
+			}
+
+			&-details {
+				width: 75%;
+
+				&-project {
+					padding: 20px 10px;
+					line-height: 2;
+
+					.project {
+						&-name {
+							font-size: 1.25rem;
+							font-weight: 600;
+						}
+						&-techstack {
+							color: $gray-color;
+						}
+						&-url {
+							a {
+								color: $blue-color;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		//Skills
+		.skills-ct {
+			display: flex;
+			flex-flow: row wrap;
+
+			&-category {
+				display: flex;
+				justify-content: center;
+				flex-flow: row nowrap;
+				align-items: center;
+				width: 100%;
+				padding: 20px;
+				text-transform: capitalize;
+				font-size: 2rem;
+			}
+
+			&-section {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-evenly;
+				align-items: center;
+				line-height: 2;
+
+				.primary {
+					color: $green-color;
+					padding: 20px;
+					font-size: 1.75rem;
+					font-weight: 900;
+				}
+
+				.secondary {
+					color: $yellow-color;
+					padding: 20px;
+					font-size: 1.5rem;
+					font-weight: 700;
+				}
+
+				.tertiary {
+					color: $gray-color;
+					padding: 20px;
+					font-size: 1.25rem;
+					font-weight: 600;
+				}
+
+				.quaternary {
+					color: $gray-color;
+					padding: 20px;
+					font-size: 1rem;
+					font-weight: 500;
+				}
+
+				.achievement-row {
+					display: flex;
+					flex-flow: row nowrap;
+					width: 100%;
+					justify-content: flex-start;
+					line-height: 3;
+					padding-left: 25px;
+
+					&::before {
+						content: ' \2728';
+						font-weight: 900;
+						padding: 0 5px;
+					}
+				}
+			}
+		}
+	}
+}

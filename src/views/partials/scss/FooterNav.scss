@@ -1,0 +1,44 @@
+@import './../../../styles/base.scss';
+
+.footer-nav {
+	position: sticky;
+	bottom: 0;
+	height: 65px;
+	background-color: $base-color;
+
+	&-cols {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+		padding: 10px;
+		font-weight: 600;
+		font-size: 0.875rem;
+
+		.footer-col {
+			display: flex;
+			flex-flow: column wrap;
+			align-items: center;
+			cursor: pointer;
+		}
+		.icon {
+			height: 20px;
+			width: 20px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+		}
+		.experience-icon {
+			background-image: url('./../../../resources/images/experience.svg');
+		}
+		.skills-icon {
+			background-image: url('./../../../resources/images/skills.svg');
+		}
+		.academics-icon {
+			background-image: url('./../../../resources/images/academics.svg');
+		}
+		.projects-icon {
+			background-image: url('./../../../resources/images/projects.svg');
+		}
+	}
+}

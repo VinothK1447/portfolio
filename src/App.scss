@@ -1,0 +1,42 @@
+@import './styles/base.scss';
+
+.parallax-scroller {
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	height: 85vh;
+}
+
+.parallax-img-text {
+	font-size: 3rem;
+	font-weight: 900;
+	text-align: center;
+	padding: 25% 0;
+}
+
+.experience {
+	background-image: url('./resources/images/experience.jpg');
+}
+.skills {
+	background-image: url('./resources/images/skills.jpg');
+}
+.projects {
+	background-image: url('./resources/images/projects.jpg');
+}
+.academics {
+	background-image: url('./resources/images/academics.jpg');
+}
+
+.content {
+	height: fit-content;
+	background-color: transparent;
+}
+a,
+a:hover {
+	color: $text-color;
+	text-decoration: none;
+	> div:first-child {
+		margin: 0 auto;
+		padding-bottom: 10px;
+	}
+}
