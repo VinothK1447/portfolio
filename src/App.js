@@ -11,25 +11,17 @@ function App() {
 	const [userName, setUserName] = useState(null)
 	const [currentRole, setCurrentRole] = useState(null)
 	const [description, setDescription] = useState(null)
-	const [clientOnly, setClientOnly] = useState(true)
 
 	useLayoutEffect(() => {
 		let path = window.location
-		let id = path.pathname
-		let params = new URLSearchParams(document.location.search)
-		let userId = params.get('id')
-		let result
-		if (!clientOnly) {
-			result = axios.get('/api/v1/portfolio', {
-				id: id ? id.split('/')[1] : ''
-			})
-		} else {
-			result = Promise.resolve({
-				data: {
-					userData: [users[userId]]
-				}
-			})
-		}
+		let _pathName = path.pathname
+		let _splitArr = _pathName.split('/')
+		let _userId = _splitArr[_splitArr.length - 1]
+		let result = Promise.resolve({
+			data: {
+				userData: [users[_userId]]
+			}
+		})
 		result
 			.then((data) => {
 				setUserData(data.data.userData[0])
